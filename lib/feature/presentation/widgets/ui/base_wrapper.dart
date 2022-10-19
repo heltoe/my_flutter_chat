@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_flutter_chat/common/config.dart';
+import 'package:my_flutter_chat/common/dimensions.dart';
 
 class BaseWrapper extends StatelessWidget {
   const BaseWrapper({
@@ -13,7 +13,7 @@ class BaseWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: padding == 0 ? AppConfig.basePadding : padding),
+      padding: EdgeInsets.symmetric(horizontal: padding == 0 ? Dimensions.basePadding : padding),
       child: child,
     );
   }

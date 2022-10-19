@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_chat/common/config.dart';
+import 'package:my_flutter_chat/common/dimensions.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -15,7 +16,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: AppConfig.heightHeader,
+      height: Dimensions.heightHeader,
       width: double.maxFinite,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -28,7 +29,7 @@ class Header extends StatelessWidget {
         children: [
           isShowLogo
               ? Container(
-                  height: AppConfig.heightHeader,
+                  height: Dimensions.heightHeader,
                   width: double.maxFinite,
                   alignment: Alignment.center,
                   child: const Text(
@@ -41,7 +42,7 @@ class Header extends StatelessWidget {
                 )
               : const SizedBox(),
           SizedBox(
-            height: AppConfig.heightHeader,
+            height: Dimensions.heightHeader,
             width: double.maxFinite,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

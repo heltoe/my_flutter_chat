@@ -44,7 +44,8 @@ class BaseAuthTemplate extends StatelessWidget {
                   children: [
                     const SizedBox(height: 20),
                     BaseBox(
-                      padding: 0,
+                      paddingHorizontal: 0,
+                      paddingVertical: 0,
                       child: Column(
                         children: [
                           Padding(

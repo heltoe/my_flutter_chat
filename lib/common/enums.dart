@@ -4,3 +4,8 @@ enum PageEnum {
   restorePassword,
 }
 
+enum FriendsPageTypeEnum {
+  all,
+  requestToFriends,
+  friends
+}

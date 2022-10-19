@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_flutter_chat/common/config.dart';
+import 'package:my_flutter_chat/common/dimensions.dart';
 
 class BaseHeaderButton extends StatelessWidget {
   const BaseHeaderButton({
@@ -15,9 +15,9 @@ class BaseHeaderButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: AppConfig.basePadding),
+        padding: const EdgeInsets.symmetric(horizontal: Dimensions.basePadding),
         alignment: Alignment.centerLeft,
-        height: AppConfig.heightHeader,
+        height: Dimensions.heightHeader,
         child: child,
       ),
     );
