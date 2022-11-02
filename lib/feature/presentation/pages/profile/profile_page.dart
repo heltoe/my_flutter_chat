@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter_chat/core/routing.dart';
 import 'package:my_flutter_chat/feature/presentation/pages/profile/widgets/block_photo.dart';
 import 'package:my_flutter_chat/feature/presentation/pages/profile/widgets/password_form.dart';
 import 'package:my_flutter_chat/feature/presentation/pages/profile/widgets/personal_info_form.dart';
@@ -6,6 +7,7 @@ import 'package:my_flutter_chat/feature/presentation/widgets/common/layouts/auth
 import 'package:my_flutter_chat/feature/presentation/widgets/common/header_components/header.dart';
 import 'package:my_flutter_chat/feature/presentation/widgets/common/header_components/left_button.dart';
 import 'package:my_flutter_chat/feature/presentation/widgets/ui/base_wrapper.dart';
+import 'package:provider/provider.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -17,7 +19,9 @@ class ProfilePage extends StatelessWidget {
         child: Column(
           children: [
             Header(
-              leftWidget: LeftButton(onTap: () {}),
+              leftWidget: LeftButton(onTap: () {
+                context.read<AppRouteDelegate>().goToListChatPage();
+              }),
             ),
             const BlockPhoto(),
             const SizedBox(height: 20),

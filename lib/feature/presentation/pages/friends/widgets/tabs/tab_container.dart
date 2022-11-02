@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_chat/common/enums.dart';
+import 'package:my_flutter_chat/core/routing.dart';
 import 'package:my_flutter_chat/feature/presentation/pages/friends/widgets/tabs/tab_item.dart';
+import 'package:provider/provider.dart';
 
 class TabEntity {
   FriendsPageTypeEnum type;
@@ -34,6 +36,14 @@ class _TabContainerState extends State<TabContainer> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    setState(() {
+      currentTab = context.read<AppRouteDelegate>().typeFriendsPage as FriendsPageTypeEnum;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -45,6 +55,7 @@ class _TabContainerState extends State<TabContainer> {
           onTap: () {
             setState(() {
               currentTab = tabs[index].type;
+              context.read<AppRouteDelegate>().goToFriendsPage(currentTab);
             });
           },
         ),

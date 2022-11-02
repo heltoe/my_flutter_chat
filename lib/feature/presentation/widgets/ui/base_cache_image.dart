@@ -9,12 +9,14 @@ class BaseCacheImage extends StatelessWidget {
     this.borderRadius = 0,
     required this.size,
     required this.url,
+    this.errorWidget,
   }) : super(key: key);
   final double size;
   final double width;
   final double height;
   final double borderRadius;
   final String url;
+  final Widget? errorWidget;
 
   Widget _imageWidget(ImageProvider imageProvider) {
     return Container(
@@ -26,6 +28,10 @@ class BaseCacheImage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _errorWidget() {
+    return errorWidget ?? _imageWidget(const AssetImage('assets/images/noimage.jpg'));
   }
 
   @override
@@ -41,7 +47,7 @@ class BaseCacheImage extends StatelessWidget {
         return const Center(child: CircularProgressIndicator());
       },
       errorWidget: (context, url, error) {
-        return _imageWidget(const AssetImage('assets/images/noimage.jpg'));
+        return _errorWidget();
       },
     );
   }

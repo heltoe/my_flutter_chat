@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter_chat/core/routing.dart';
 import 'package:my_flutter_chat/feature/presentation/widgets/ui/base_input.dart';
+import 'package:provider/provider.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -31,7 +33,9 @@ class _LoginFormState extends State<LoginForm> {
         ),
         const SizedBox(height: 20),
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            context.read<AppRouteDelegate>().goToRestorePassword();
+          },
           child: const Text(
             "Вы забыли пароль?",
             style: TextStyle(

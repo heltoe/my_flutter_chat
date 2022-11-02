@@ -27,3 +27,4 @@ const List<Color> _listColors = [
 Color getColorById(int id) => _listColors[id % _listColors.length];
 String getAuthTokenValue(String value) => "Bearer $value";
 String getFullUrl(String value) => "${AppConfig.backendUrl}$value";
+String getInitials(String fullName) => fullName.split(" ").map((str) => str[0]).join("");
